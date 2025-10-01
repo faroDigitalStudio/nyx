@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <!--
   File: index.html
-  Project: Nyx Boudoir
-  Created: 09.12.21
-  Updated: 09.28.2025
+  Project: Nyx Boudoir website
+  Updated: 09.29.2025
   Author: Faro Digital Studio
 -->
 <html lang="en">
@@ -25,35 +24,41 @@
   <link rel="icon" href="images/favIcon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="index.css" />
 
-  <!-- Analytics (keep your existing ID if in use) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT9BGRNDVZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-DT9BGRNDVZ");
-  </script>
+  <!-- Safety guards -->
+  <style>
+    html, body { overflow-x: hidden; }
+    table { width:100%; max-width:100%; border-collapse:collapse; }
+    img, video { max-width:100%; height:auto; }
+    header#header { width:100vw; }
+    @media (max-width:1000px){
+      #rightImage { display:none !important; }
+    }
+  </style>
 </head>
 
 <body>
   <!-- Loading -->
-  <div id="loading" aria-hidden="true"><div id="spinner" role="status" aria-label="Loading"></div></div>
+  <div id="loading" aria-hidden="true"><div id="spinner"></div></div>
 
   <!-- Lightbox -->
   <div id="magnify" aria-modal="true" role="dialog">
-    <h1 onclick="closemagnify()" aria-label="Close image (Esc)"><i class="fas fa-times" aria-hidden="true"></i></h1>
-    <div id="img_here" role="img" aria-label="Preview image"></div>
+    <h1 onclick="closemagnify()" aria-label="Close image"><i class="fas fa-times"></i></h1>
+    <div id="img_here"></div>
   </div>
 
-  <!-- Header -->
-  <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
-    <table aria-label="Site header">
+  <!-- Anchor for back-to-top -->
+  <a id="top" class="visually-hidden" aria-hidden="true"></a>
+
+  <!-- Header (transparent at top; shrinks + white bg on scroll) -->
+  <header id="header" class="animated slideInDown" style="animation-delay:.5s; width:100vw;">
+    <table role="presentation">
       <tr>
         <td id="logo">
-          <a href="#" aria-label="Back to top">
+          <a href="#top" aria-label="Back to top">
             <img src="images/logoFull.png" alt="Nyx Boudoir logo" />
           </a>
         </td>
@@ -67,9 +72,9 @@
   </header>
 
   <!-- Hero -->
-  <table id="top_part" aria-label="Hero">
+  <table id="top_part" role="presentation">
     <tr>
-      <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+      <td id="about" class="animated slideInLeft" style="animation-delay:.8s;">
         <div class="hero-stack">
           <h1>Bold. Elegant.<br/>Unapologetically You.</h1>
           <p class="subtitle">
@@ -78,48 +83,47 @@
           </p>
 
           <div class="cta-row">
-            <a class="btn_one" href="https://calendly.com/nyxpics/discovery" target="_blank" rel="noopener" aria-label="Book a 30-minute discovery call on Calendly">
-              <i class="far fa-calendar-plus" aria-hidden="true"></i>&nbsp; Book a 30-Minute Call
-            </a>
-            <a class="btn_one" href="mailto:book@nyxpics.com?subject=Nyx%20Boudoir%20Inquiry&body=Hi%20Nyx%20team%2C%20I%E2%80%99m%20interested%20in%20a%20boudoir%20or%20model%20session.%20Here%E2%80%99s%20what%20I%E2%80%99m%20thinking%3A" aria-label="Email Nyx Boudoir">
-              <i class="far fa-envelope" aria-hidden="true"></i>&nbsp; Email Us
-            </a>
+            <a class="btn_one" href="https://calendly.com/nyxpics/discovery" target="_blank" rel="noopener">Book a 30-Minute Call</a>
+            <a class="btn_one" href="mailto:book@nyxpics.com?subject=Nyx%20Boudoir%20Inquiry">Email Us</a>
           </div>
 
-          <!-- Hero chips -->
           <div class="chips">
             <span class="chip"><i class="far fa-heart"></i>Empowering</span>
             <span class="chip"><i class="far fa-image"></i>Editorial Edits</span>
             <span class="chip"><i class="fas fa-user-shield"></i>Private &amp; Discreet</span>
           </div>
+
+          <!-- requested extra spacing around the divider -->
+          <br>
+          <div class="hero-divider" aria-hidden="true"></div>
           <br>
 
-          <!-- subtle divider + socials -->
-          <div class="hero-divider" aria-hidden="true"></div>
           <div class="social-row hero-socials">
-            <a class="social" href="https://www.instagram.com/nyx.boudoir" aria-label="Instagram (nyx.boudoir)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a class="social" href="https://www.facebook.com/nyxpics" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-            <a class="social" href="https://www.twitter.com/NyxPhotographs/" aria-label="Twitter/X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a class="social" href="https://www.behance.net/nyxphotography" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
+            <a class="social" href="https://www.instagram.com/nyx.boudoir" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="social" href="https://www.facebook.com/nyxboudoir" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a class="social" href="https://www.twitter.com/NyxPhotographs/" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            <a class="social" href="https://www.behance.net/nyxphotography" aria-label="Behance"><i class="fab fa-behance"></i></a>
           </div>
         </div>
       </td>
-
-      <!-- Right hero image remains CSS-driven -->
-      <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+      <td id="rightImage" class="animated jackInTheBox" style="animation-delay:1s;"></td>
     </tr>
   </table>
 
   <!-- Experience -->
-  <section id="bio" aria-label="The Experience">
+  <section id="bio">
     <h1>The Experience</h1>
     <p>
       At Nyx Boudoir, we capture the extraordinary in the everyday. We believe in the <span class="emph">thrill</span> of the moment and the <span class="emph">allure</span> of the unknown. Each session is designed to highlight your unique charm, creating images that are as <span class="emph">empowering</span> as they are <span class="emph">stunning</span>.
-      <br /><br />
+      <br><br>
       Whether you’re a first-timer or a seasoned model, our goal is to create an environment where you can be your most authentic self. We guide you every step of the way, ensuring the process feels <span class="emph">liberating</span>, <span class="emph">playful</span>, and <span class="emph">transformational</span>. In our hands, every shoot becomes a journey of self-discovery — and under our lens, you’re not just a subject, but a masterpiece waiting to be <span class="emph">unveiled</span>.
     </p>
 
-    <!-- Experience chips: five, centered -->
+    <!-- requested extra spacing around the divider -->
+    <br>
+    <hr class="ui-divider" aria-hidden="true">
+    <br>
+
     <div class="chips chips-about">
       <span class="chip"><i class="fas fa-route"></i>On-Location</span>
       <span class="chip"><i class="fas fa-tshirt"></i>Wardrobe Assist</span>
@@ -130,80 +134,110 @@
   </section>
 
   <!-- Portfolio -->
-  <section id="work" aria-label="Portfolio">
+  <section id="work">
     <h1>Portfolio</h1>
     <p>Selected frames from recent sessions. Tap any image to preview.</p>
-    <div id="photos" aria-label="Gallery">
+    <div id="photos">
       <img src="images/example1.jpg" alt="Boudoir portrait 1" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
       <img src="images/example2.jpg" alt="Boudoir portrait 2" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
       <img src="images/example3.jpg" alt="Boudoir portrait 3" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
-      <img src="images/example4.jpg" alt="Boudoir portrait 4" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
-      <img src="images/example5.jpg" alt="Boudoir portrait 5" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
-      <img src="images/example6.jpg" alt="Boudoir portrait 6" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
-      <img src="images/example7.jpg" alt="Boudoir portrait 7" loading="lazy" decoding="async" onclick="magnify($(this).attr('src'))" />
     </div>
   </section>
 
   <!-- Contact -->
-  <div id="contact" aria-label="contact">
+  <div id="contact">
     <h1>Connect</h1>
     <p>Ready to begin? Choose how you’d like to get started.</p>
-
-    <table aria-label="Booking and contact options" style="width:100%;">
+    <table role="presentation">
       <tr>
-        <!-- Left: info + socials -->
-        <td style="vertical-align:top;">
+        <td>
           <div id="inner_div">
-            <table id="inner_table" aria-label="Details">
+            <table id="inner_table" role="presentation">
               <tr>
-                <td><i class="fas fa-at" aria-hidden="true"></i> &nbsp; <a href="mailto:book@nyxpics.com">book@nyxpics.com</a></td>
+                <td><i class="fas fa-at"></i> &nbsp; <a href="mailto:book@nyxpics.com">book@nyxpics.com</a></td>
               </tr>
               <tr>
-                <td><i class="fas fa-map-marker-alt" aria-hidden="true"></i> &nbsp; <div id="address">On the road, North America &amp; beyond</div></td>
+                <td><i class="fas fa-map-marker-alt"></i> &nbsp; <div id="address">On the road, North America &amp; beyond</div></td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="social" href="https://www.instagram.com/nyx.boudoir"><i class="fab fa-instagram"></i></a>
+                  <a class="social" href="https://www.facebook.com/nyxboudoir"><i class="fab fa-facebook"></i></a>
+                  <a class="social" href="https://www.twitter.com/NyxPhotographs/"><i class="fab fa-twitter"></i></a>
+                  <a class="social" href="https://www.behance.net/nyxphotography"><i class="fab fa-behance"></i></a>
+                </td>
               </tr>
             </table>
-            <div class="social-row connect-socials">
-              <a class="social" href="https://www.instagram.com/nyx.boudoir" aria-label="Instagram (nyx.boudoir)"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-              <a class="social" href="https://www.facebook.com/nyxpics" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-              <a class="social" href="https://www.twitter.com/NyxPhotographs/" aria-label="Twitter/X"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-              <a class="social" href="https://www.behance.net/nyxphotography" aria-label="Behance"><i class="fab fa-behance" aria-hidden="true"></i></a>
-            </div>
           </div>
         </td>
-
-        <!-- Right: CTAs side-by-side + helper line (no form) -->
-        <td style="vertical-align:top;">
-          <div id="inner_div">
-            <div class="cta-row cta-row-contact">
-              <a class="btn_one" href="https://calendly.com/nyxpics/discovery" target="_blank" rel="noopener" aria-label="Book a 30-minute discovery call on Calendly">
-                <i class="far fa-calendar-plus" aria-hidden="true"></i>&nbsp; Book a 30-Minute Call
-              </a>
-              <a class="btn_one" href="mailto:book@nyxpics.com?subject=Nyx%20Boudoir%20Inquiry&body=Hi%20Nyx%20team%2C%20I%E2%80%99m%20interested%20in%20a%20boudoir%20or%20model%20session.%20Here%E2%80%99s%20what%20I%E2%80%99m%20thinking%3A" aria-label="Email Nyx Boudoir">
-                <i class="far fa-envelope" aria-hidden="true"></i>&nbsp; Email Us
-              </a>
-            </div>
-            <p class="cta-hint">No long forms — a quick call or a simple email gets things started.</p>
+        <td>
+          <div class="cta-row cta-row-contact">
+            <a class="btn_one" href="https://calendly.com/nyxpics/discovery" target="_blank" rel="noopener">Book a 30-Minute Call</a>
+            <a class="btn_one" href="mailto:book@nyxpics.com?subject=Nyx%20Boudoir%20Inquiry">Email Us</a>
           </div>
+          <p class="cta-hint">No long forms — a quick call or a simple email gets things started.</p>
         </td>
       </tr>
     </table>
   </div>
 
-  <!-- Footer -->
-  <footer id="footer" aria-label="Footer">
-    <div class="footer-item">
-      <p>Powered by<br /><a href="https://www.farodigitalstudio.com" target="_blank" rel="noopener">Faro Digital Studio</a></p>
+  <!-- Footer (full-bleed wrapper + centered inner row) -->
+  <footer id="site-footer" role="contentinfo">
+    <!-- Desktop -->
+    <div class="footer-inner desktop-only">
+      <div class="footer-item">
+        <p>Powered by<br><a href="https://www.farodigitalstudio.com" target="_blank" rel="noopener">Faro Digital Studio</a></p>
+      </div>
+
+      <div class="footer-item">
+        <a href="#top" class="logo-link" aria-label="Back to top">
+          <img src="images/logo.png" alt="Nyx mark" />
+        </a>
+        <p class="copyright">© Nyx Photography, 2025. All rights reserved.</p>
+      </div>
+
+      <div class="footer-item">
+        <p class="metalumina-text">A creative endeavor within<br>
+          <a href="https://www.metalumina.studio" target="_blank" rel="noopener">the Metalumina spectrum</a>
+        </p>
+      </div>
     </div>
-    <div class="footer-item">
-      <a href="#" class="logo-link" aria-label="Back to top">
-        <img src="images/logo.png" alt="Nyx mark" />
-      </a>
-      <p class="copyright">&copy; Nyx Photography, 2025. All rights reserved.</p>
-    </div>
-    <div class="footer-item">
-      <p class="metalumina-text">A creative endeavor within<br /><a href="https://www.metalumina.studio" target="_blank" rel="noopener">the Metalumina spectrum</a></p>
+
+    <!-- Mobile -->
+    <div class="footer-inner-mobile mobile-only">
+      <p style="margin:4px 0; font-size:.85rem;">
+        © 2025 Nyx Photography · Powered by
+        <a href="https://www.farodigitalstudio.com" target="_blank" rel="noopener">Faro</a>
+      </p>
+      <p style="margin:6px 0; font-size:.95rem;"><a href="#top">Back to top ↑</a></p>
     </div>
   </footer>
+
+
+  <!-- Loader failsafe -->
+  <script>
+    window.addEventListener('load', function(){
+      var l = document.getElementById('loading');
+      if (l) l.style.display = 'none';
+    });
+  </script>
+
+  <!-- Only pad hero on mobile (solid header there) -->
+  <script>
+    (function padHeroMobile(){
+      function doPad(){
+        var w = window.innerWidth || document.documentElement.clientWidth;
+        var h = document.getElementById('header');
+        var t = document.getElementById('top_part');
+        if (!h || !t) return;
+        if (w < 1000){ t.style.marginTop = h.offsetHeight + 'px'; }
+        else { t.style.marginTop = '0px'; }
+      }
+      document.addEventListener('DOMContentLoaded', doPad);
+      window.addEventListener('load', doPad);
+      window.addEventListener('resize', doPad);
+    })();
+  </script>
 
   <script src="index.js"></script>
 </body>

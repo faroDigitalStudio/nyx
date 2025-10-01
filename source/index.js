@@ -1,75 +1,80 @@
-var width = $(window).width(); 
-window.onscroll = function(){
-    if ((width >= 1000)){
-        if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            $("#header").css("background","#fff");
-            $("#header").css("color","#251825");
-            $("#header").css("box-shadow","0px 0px 20px rgba(0,0,0,0.09)");
-            $("#header").css("padding","2vh 4vw");
-            
-            $("#navigation a").hover(function(){
-                $(this).css("border-bottom","2px solid #251825");
-            },function(){
-                $(this).css("border-bottom","2px solid transparent");
-            });            
-        }else{
-            $("#header").css("background","transparent");
-            $("#header").css("color","#fff");
-            $("#header").css("box-shadow","0px 0px 0px rgba(0,0,0,0)");
-            $("#header").css("padding","6vh 4vw");
-            
-            $("#navigation a").hover(function(){
-                $(this).css("border-bottom","2px solid #fff");
-            },function(){
-                $(this).css("border-bottom","2px solid transparent");
-            });
-        }
+(function(){
+  var DESKTOP_W = 1000;
+
+  function setHeaderState() {
+    var w = window.innerWidth || document.documentElement.clientWidth;
+    var y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var scrolled = y > 80;
+    var $header = $("#header");
+
+    if (w >= DESKTOP_W) {
+      // Desktop: transparent at top, solid when scrolled
+      if (scrolled) {
+        $header.addClass("is-scrolled").removeClass("is-top");
+      } else {
+        $header.removeClass("is-scrolled").addClass("is-top");
+      }
+      // No desktop hero padding
+      $("#top_part").css("marginTop","0px");
+    } else {
+      // Mobile: always solid
+      $header.addClass("is-scrolled").removeClass("is-top");
+      // Ensure hero sits below actual header height
+      $("#top_part").css("marginTop", $header.outerHeight() + "px");
     }
-}
+  }
 
-function magnify(imglink){
-    $("#img_here").css("background",`url('${imglink}') center center`);
-    $("#magnify").css("display","flex");
-    $("#magnify").addClass("animated fadeIn");
-    setTimeout(function(){
-        $("#magnify").removeClass("animated fadeIn");
-    },800);
-}
-
-function closemagnify(){
+  // Lightbox helpers
+  window.magnify = function(imglink){
+    $("#img_here").css("background","url('"+imglink+"') center center");
+    $("#magnify").css("display","flex").addClass("animated fadeIn");
+    setTimeout(function(){ $("#magnify").removeClass("animated fadeIn"); },800);
+  };
+  window.closemagnify = function(){
     $("#magnify").addClass("animated fadeOut");
     setTimeout(function(){
-        $("#magnify").css("display","none");
-        $("#magnify").removeClass("animated fadeOut");
-        $("#img_here").css("background",`url('') center center`);
+      $("#magnify").css("display","none").removeClass("animated fadeOut");
+      $("#img_here").css("background","none");
     },800);
-}
+  };
 
-setTimeout(function(){
+  // Hide loader
+  setTimeout(function(){
     $("#loading").addClass("animated fadeOut");
     setTimeout(function(){
-      $("#loading").removeClass("animated fadeOut");
-      $("#loading").css("display","none");
+      $("#loading").removeClass("animated fadeOut").css("display","none");
     },800);
-},1650);
+  },1650);
 
-$(document).ready(function(){
-    $("a").on('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-        $('body,html').animate({
-        scrollTop: $(hash).offset().top
-        }, 1800, function(){
+  // Smooth anchor scroll
+  $(document).on("click","a[href^='#']", function(e){
+    var hash = this.hash;
+    if (!hash) return;
+    var $target = $(hash);
+    if ($target.length){
+      e.preventDefault();
+      $("html,body").animate({ scrollTop: $target.offset().top }, 800, function(){
         window.location.hash = hash;
-       });
-       } 
       });
+    }
   });
 
-  $(document).ready(function(){
-    $("#logo a, .logo-link").click(function(event){
-        event.preventDefault();
-        $('html, body').animate({scrollTop: 0}, 'slow');
-    });
-});
+  // Back to top (logo + footer logo)
+  $(document).on("click", "#logo a, .logo-link", function(e){
+    e.preventDefault();
+    $("html, body").animate({scrollTop:0}, 500);
+  });
+
+  // Initial + reactive
+  $(function(){
+    setHeaderState();
+    // after fonts/images paint
+    setTimeout(function(){
+      setHeaderState();
+      window.dispatchEvent(new Event('scroll'));
+    }, 0);
+  });
+
+  window.addEventListener("scroll", setHeaderState);
+  window.addEventListener("resize", setHeaderState);
+})();

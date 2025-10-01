@@ -1,675 +1,665 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    padding:0px;
-    margin:0px;
-    max-width:100vw;
-    overflow-x:hidden;
-    scroll-behavior: smooth;
-}
-#loading {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background: white;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-#spinner {
-    animation: rotate 0.56s infinite linear;
-    width:50px;
-    height:50px;
-    border:12px solid rgb(81, 1, 17);
-    border-bottom:12px solid #fff;
-    border-radius:50%;
-    margin:0;
-}
-@keyframes rotate {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
-header {
-    width:92vw;
-    padding:6vh 4vw;
-    position:fixed;
-    font-weight:bold;
-    background:transparent;
-    color:#fff;
-    transition:0.4s ease-in-out;
-    z-index:2;
-}
-header table {
-    width:100%;
-}
-#logo {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-#logo img {
-    height: auto;
-    width: auto;
-    max-width: 100%;
-    max-height: 150px;
-    margin-right: 10px;
-}
-#navigation {
-    width:80%;
-}
-h1 {
-    text-align: center;
-    margin-bottom: 1em;
-    white-space: nowrap;
-    color: rgb(81, 1, 17);
-}
-p {
-    text-align: justify;
-    text-justify: inter-word;
-    font-size: 1.2em;
-    margin: 0 auto;
-    color: #251825;
-}
-#magnify {
-    width:100vw;
-    height:100vh;
-    background:rgba(0, 0, 0, 0.92);
-    position:fixed;
-    z-index:4;
-    display:none;
-    flex-direction: column;
-    justify-content:center;
-}
-#magnify h1 {
-    position:absolute;
-    top:0;
-    right:0;
-    margin:20px 40px;
-    color:#fff;
-    transition:0.4s ease-in-out;
-}
-#magnify h1:hover{
-    color:rgb(49, 32, 49);
-    cursor:pointer;
-}
-#img_here {
-    width:90%;
-    height:90%;
-    background-size:contain !important;
-    background-repeat:no-repeat !important;
-    margin:0px auto;
-}
-#logo {
-    font-size:24px;
-    color:rgb(81, 1 , 17);
-}
-#navigation {
-    text-align:right;
-}
-#navigation a {
-    color:inherit;
-    text-decoration:none;
-    padding:5px 5px;
-    border-bottom:2px solid transparent;
-    margin-left:4vw;
-    transition:0.4s ease-in-out;
-    font-size: 20px;
-}
-#navigation a:hover{
-    border-bottom: 2px solid #fff; /* initial hover color */
-}
-#top_part {
-    width:100%;
-    border:2vh solid #fff;
-}
-#top_part tr td{
-    width:50%;
-}
-#about {
-    width:84% !important;
-    height:95vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    text-align:left;
-    padding:0px 8%;
-}
-#about h1 {
-    font-size:45px;
-    word-wrap:break-word;
-}
-#about table {
-    width:70%;
-    margin-top:4vh;
-}
-#about table tr td {
-    width:20% !important;
-    text-align:left;
-}
-.social {
-    color:rgb(81, 1, 17);
-    font-size:23px;
-    padding:12px 17px;
-    border-radius:50%;
-    background:transparent;
-    transition:0.4s ease-in-out;
-    font-weight:bold;
-    margin:0px 8px;
-}
-.social:hover { 
-    cursor: pointer;
-    color:#fff;
-    background:rgb(60, 1, 12);
-    box-shadow:0px 10px 30px rgba(37, 24, 37,0.8);
-}
-.btn_one {
-    font-size:18px;
-    font-family: 'Poppins', sans-serif;
-    color:rgb(81, 1, 17);
-    background:#fff;
-    border:3px solid rgb(81, 1, 17);
-    padding:8px 40px;
-    border-radius:80px;
-    font-weight:bold;
-    margin:2vh 0px;
-    transition:0.4s ease-in-out;
-    white-space: nowrap;
-    min-width: 100px;  /* replace with your desired minimum width */
-    width: auto;  
-}
-.btn_one:hover {
-    box-shadow:0px 10px 30px rgba(37, 24, 37, 0.8);
-    cursor:pointer;
-    color:#fff;
-    background:rgb(60, 1, 12);
-}
-.button-div {
-    text-align: center;
-}
-#rightImage {
-    width: 100%;
-    height: 95vh;
-    background: linear-gradient(0deg, rgba(60, 1, 12, 0.6), rgba(37, 24, 37, 0.4)), url(images/background.jpg) right center / cover no-repeat;
-}
-#work {
-    width:92vw;
-    padding:6vh 4vw;
-    font-weight:bold;
-}
-#work h1 {
-    padding:5px 0px;
-    border-bottom:4px solid rgb(81, 1, 17);
-    width:6%;
-}
-#photos {
-    width:100%;
-    columns:3;
-    column-gap:4%;
-    z-index:1;
-    transition:0.4s ease-in-out;
-}
-#photos img {
-    width:100%;
-    height:auto;
-    margin:4.5% 0px;
-    transition:0.4s ease-in-out;
-}
-#photos img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-#bio {
-    width:92vw;
-    padding:6vh 4vw;
-    font-weight:bold;
-}
-#bio h1 {
-    padding:5px 0px;
-    border-bottom:4px solid rgb(81, 1, 17);
-    width:8%;
-}
-#contact {
-    width:92vw;
-    padding:6vh 4vw;
-}
-#contact h1 {
-    padding:5px 0px;
-    border-bottom:4px solid rgb(81, 1, 17);
-    width:10%;
-}
-#contact table {
-    width:100%;
-}
-#contact table tr td {
-    width:50%;
-}
-#inner_div table{
-    width:100%;
-}
-#inner_div table tr td{
-    font-weight:bold;
-}
-#inner_table tr td{
-    padding:10px 20px !important;
-}
-#contact form {
-    width:100%;
-}
-#contact form input {
-    width:96%;
-    margin:20px 1%;
-    background:transparent;
-    border:0px;
-    border-bottom:3px solid rgba(81, 1, 17);
-    padding:8px 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size:18px;
-    transition:0.4s ease-in-out;
-    color:#000;
-    font-weight:bold;
-}
-#contact form textarea {
-    width:96%;
-    margin:20px 1%;
-    padding:8px 10px;
-    border:0px;
-    border-bottom:3px solid rgba(81, 1, 17);
-    padding:8px 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size:18px;
-    background:transparent;
-    resize:none;
-    transition:0.4s ease-in-out;
-    color:#000;
-    font-weight:bold;
-}
-#contact form input:focus {
-    outline:none;
-    border-bottom:3px solid rgba(49, 32, 49,1);
-}
-#contact form textarea:focus {
-    outline:none;
-    border-bottom:3px solid rgba(49, 32, 49,1);
-}
-#address {
-    position:relative;
-    top:-25px;
-    left:30px;
-}
-#footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #fff;
-    padding: 20px;
-}
-#footer a {
-    color: #251825;
-    text-decoration: none;
-}
-#footer a:hover {
-    color: rgb(81, 1, 17);
-    font-weight: bold; /* Make the text bold on hover */
-}
-.footer-item p a {
-    text-decoration: none;
-    color: inherit;
-}
-.footer-item p a:hover {
-    text-decoration: underline;
-    color: rgb(81, 1, 17);
-    font-weight: bold; /* Make the text bold on hover */
-}
-#lighthouse-logo, #nyx-logo, #metalumina-logo {
-    max-height: 100px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-}
-#footer .footer-item {
-    flex: 1;
-    text-align: center; /* Center align text by default */
-}
-.metalumina-text {
-    text-align: right; /* Right align text for Metalumina */
-}
-.copyright {
-    margin-top: 10px;
-    text-align: center;
-}
-::placeholder {
-    color:#000;
-}
-button:focus {
-    outline:none;
-}
-::-webkit-scrollbar {
-    width:5px;
-    height:5px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
-::-webkit-scrollbar-thumb {
-    background: rgb(0, 0, 0); 
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0,0.8); 
-}
-.captcha-send {
-    text-align: center;
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+body{
+  font-family:'Poppins',sans-serif;
+  margin:0; padding:0;
+  max-width:100vw; overflow-x:hidden;
+  color:#251825;
+}
+img{ max-width:100%; height:auto; }
+
+h1{
+  text-align:center;
+  margin-bottom:1em;
+  white-space:nowrap; /* unwrap on mobile */
+  color:rgb(81,1,17);
+}
+p{
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:1.2em;
+  margin:0 auto;
+  color:#251825;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar{ width:5px; height:5px; }
+::-webkit-scrollbar-track{ background:#f1f1f1; }
+::-webkit-scrollbar-thumb{ background:#000; }
+::-webkit-scrollbar-thumb:hover{ background:rgba(0,0,0,.8); }
+
+/* ---------- Loader ---------- */
+#loading{
+  position:fixed; inset:0;
+  background:#fff; z-index:999;
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+}
+#spinner{
+  animation:rotate .56s infinite linear;
+  width:50px; height:50px; margin:0;
+  border:12px solid rgb(81,1,17);
+  border-bottom:12px solid #fff; border-radius:50%;
+}
+@keyframes rotate{ 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+
+/* ---------- Header / Nav ---------- */
+header{
+  width:100vw;
+  position:fixed; z-index:1000; left:0; right:0; top:0;
+  background:transparent;
+  color:#fff;
+  font-weight:bold;
+  padding:6vh 4vw;
+  transition: background .25s ease, padding .25s ease, color .25s ease, box-shadow .25s ease;
+}
+header.is-scrolled{
+  background:#fff !important;
+  color:#251825 !important;
+  padding:2vh 4vw !important;
+  box-shadow:0 0 20px rgba(0,0,0,0.09);
+}
+header table{ width:100%; border-collapse:collapse; }
+
+#logo{ display:flex; align-items:center; white-space:nowrap; font-size:24px; color:rgb(81,1,17); }
+#logo img{ max-width:100%; max-height:150px; height:auto; width:auto; margin-right:10px; }
+
+#navigation{ width:80%; text-align:right; }
+#navigation a{
+  color:inherit; text-decoration:none;
+  padding:5px; margin-left:4vw;
+  border-bottom:2px solid transparent;
+  transition:border-color .2s ease;
+  font-size:20px; font-weight:700;
+}
+header:not(.is-scrolled) #navigation a:hover{ border-bottom-color:#fff; }
+header.is-scrolled       #navigation a:hover{ border-bottom-color:#251825; }
+
+/* ---------- Lightbox ---------- */
+#magnify{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:2000; display:none;
+  flex-direction:column; justify-content:center;
+}
+#magnify h1{ position:absolute; top:0; right:0; margin:20px 40px; color:#fff; transition:.4s; }
+#magnify h1:hover{ color:rgb(49,32,49); cursor:pointer; }
+#img_here{ width:90%; height:90%; margin:0 auto; background-size:contain!important; background-repeat:no-repeat!important; }
+
+/* ---------- Hero ---------- */
+#top_part, #top_part table{ table-layout:fixed; width:100%; }
+#top_part{ border:2vh solid #fff; }
+#top_part tr td{ width:50%; }
+
+#about{
+  width:84% !important;
+  height:95vh;
+  display:flex; flex-direction:column; justify-content:center;
+  text-align:left; padding:0 8%;
+}
+#about h1{ font-size:45px; word-wrap:break-word; }
+
+#rightImage{
+  width:100%; height:95vh;
+  background: linear-gradient(0deg, rgba(60,1,12,.6), rgba(37,24,37,.4)),
+              url(images/background.jpg) right center/cover no-repeat;
+}
+
+/* Buttons */
+.button-div{ text-align:center; }
+.btn_one{
+  font-size:18px;
+  font-family:'Poppins',sans-serif;
+  color:rgb(81,1,17);
+  background:#fff;
+  border:3px solid rgb(81,1,17);
+  padding:8px 40px; border-radius:80px;
+  font-weight:bold; margin:2vh 0;
+  transition:.25s ease-in-out;
+  white-space:nowrap; min-width:100px;
+  text-decoration:none !important;
+}
+.btn_one:hover{
+  background:rgb(60,1,12);
+  color:#fff;
+  box-shadow:0 10px 30px rgba(37,24,37,.8);
+}
+
+/* Socials */
+.social{
+  color:rgb(81,1,17);
+  font-size:23px;
+  padding:12px 17px;
+  border-radius:50%;
+  background:transparent;
+  transition:.25s ease-in-out;
+  font-weight:bold; margin:0 8px;
+}
+.social:hover{
+  cursor:pointer;
+  color:#fff !important;
+  background:rgb(60,1,12) !important;
+  box-shadow:0 10px 30px rgba(37,24,37,.8);
+}
+
+/* Hero utilities */
+.hero-stack{ text-align:center; }
+.hero-stack .cta-row{ display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
+.hero-stack .social-row{ display:flex; justify-content:center; gap:16px; margin-top:16px; font-size:1.4rem; }
+.subtitle{ margin-top:8px; font-weight:600; text-align:center; }
+.subtitle .subtitle-second-line{ display:block; }
+
+/* —— Unify divider styling (hero + experience use the SAME look) —— */
+.hero-divider,
+.ui-divider{
+  width:180px; height:1px;
+  margin:14px auto 12px;
+  border:0;
+  background:rgba(81,1,17,.25);
+}
+
+/* ---------- Sections (FULL-WIDTH like Eros) ---------- */
+/* Make content span the full window with 4vw side gutters */
+#work, #bio, #contact{
+  width:100vw;               /* was 92vw; this removes the narrow feel */
+  padding:6vh 4vw;
+  font-weight:bold;
+}
+/* Ensure the lead paragraph actually uses the full section width */
+#bio > p, #work > p, #contact > p{
+  width:100%;
+  max-width:none;
+}
+
+#work h1, #bio h1, #contact h1{ padding:5px 0; border-bottom:4px solid rgb(81,1,17); }
+#work h1{ width:6%; } #bio h1{ width:8%; } #contact h1{ width:10%; }
+
+/* Gallery */
+#photos{ width:100%; columns:3; column-gap:4%; z-index:1; transition:.4s; }
+#photos img{ width:100%; height:auto; margin:4.5% 0; transition:.4s; }
+#photos img:hover{ transform:scale(1.1); cursor:pointer; }
+
+/* Chips */
+.chips{ display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
+.chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:999px; font-size:16px; line-height:1;
+  background:#fff; color:#000; border:3px solid rgb(81,1,17);
+  cursor:default;
+}
+.chip i{ font-size:16px; color:#000; }
+.chip:hover{ background:#fff; color:#000; box-shadow:none; }
+#bio .chips-about{ justify-content:center; }
+
+/* Emphasis */
+.emph{ color:rgb(81,1,17); font-weight:600; }
+
+/* ---------- Contact ---------- */
+#contact table{ width:100%; }
+#contact table tr td{ width:50%; vertical-align:top; }
+#inner_div table{ width:100%; }
+#inner_div table tr td{ font-weight:bold; }
+#inner_table tr td{ padding:10px 20px !important; }
+#address{ position:relative; top:-25px; left:30px; }
+
+.cta-row-contact{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+#contact .cta-hint{ text-align:center; margin-top:12px; opacity:.85; }
+
+/* ---------- Footer (true full-width + larger logo) ---------- */
+#footer{
+  width:100vw;                  /* ensure it spans the window */
+  padding:20px 4vw;             /* match section gutters */
+}
+.desktop-only{ display:block; }
+.mobile-only { display:none; }
+
+@media (min-width:1001px){
+  #footer{ display:flex; align-items:center; justify-content:space-between; }
+  .footer-desktop{
+    display:flex !important;
+    width:100%;
+    align-items:center; justify-content:space-between; gap:24px;
+  }
+  .footer-desktop .footer-item{ flex:1 1 0; min-width:0; }
+  .footer-desktop .footer-item:nth-child(1){ text-align:left; }
+  .footer-desktop .footer-item:nth-child(2){ text-align:center; }
+  .footer-desktop .footer-item:nth-child(3){ text-align:right; }
+
+  /* bump desktop footer logo back up */
+  #footer .logo-link img{ max-height:96px; display:block; margin:0 auto; }
+
+  .copyright{ margin-top:6px; font-size:.9rem; }
+}
+
+#footer a{ color:#251825; text-decoration:none; }
+#footer a:hover{ color:rgb(81,1,17); font-weight:bold; }
+.footer-item p a{ text-decoration:none; color:inherit; }
+.footer-item p a:hover{ text-decoration:underline; color:rgb(81,1,17); font-weight:bold; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){
+  header{
+    background:#fff; color:#251825;
+    padding:3vh 2vw; box-shadow:0 0 20px rgba(0,0,0,0.06);
+  }
+  header table tr td{ width:100%; display:block; text-align:center; padding:10px 0; }
+
+  /* hero margin-top handled by JS to match live header height */
+  #top_part{ border:0; }
+
+  h1{ white-space:normal; }
+  #about{
+    width:92% !important; height:auto !important;
+    padding:6vh 4% 8vh !important; text-align:center;
+  }
+  #rightImage{ display:none; }
+
+  .btn_one{
+    white-space:normal; max-width:90%;
+    line-height:1.2; padding:10px 22px;
+    background:#fff; color:rgb(81,1,17); border-color:rgb(81,1,17);
+    box-shadow:0 10px 20px rgba(37,24,37,.08);
+  }
+  .btn_one:hover{ background:rgb(60,1,12); color:#fff; }
+
+  #photos{ columns:1; column-gap:0; }
+  #photos img{ margin:2% 0; }
+  #photos img:hover{ transform:none; }
+
+  #contact table tr td{ width:100%; display:block; }
+  #inner_table tr td{ padding:10px 0 !important; }
+
+  #work h1{ width:19%; } #bio h1{ width:25%; } #contact h1{ width:33%; }
+
+  .desktop-only{ display:none !important; }
+  .mobile-only { display:block !important; text-align:center; }
+  #footer { display:block; padding:12px 10px; }
+  #footer .footer-item{ flex:1 1 100%; text-align:center; margin:0; }
+  #footer .logo-link img{ max-height:64px; }
+}
+
+/* Smaller hero type (avoid wrap on “Unapologetically”) */
+@media (max-width:600px){
+  #about h1{ font-size:32px; line-height:1.2; }
+}
+
+/* ===== Footer hard fix (desktop) ===== */
+@media (min-width: 1001px){
+  /* make the footer span the *visual* width and not inherit any narrow container */
+  #footer{
+    width: 100% !important;              /* use layout width, safer than 100vw with scrollbars */
+    max-width: none !important;
+    padding: 28px 4vw !important;        /* a touch taller than before */
+    box-sizing: border-box;
+  }
+
+  /* ensure the inner flex wrapper truly uses the full row */
+  #footer .footer-desktop{
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin: 0 auto;                      /* if any global centering exists, don’t limit width */
+  }
+
+  /* equal thirds, no unexpected shrinking */
+  #footer .footer-desktop .footer-item{
+    flex: 1 1 33.333%;
+    min-width: 0;                        /* prevent long lines from forcing layout */
+  }
+  #footer .footer-desktop .footer-item:nth-child(1){ text-align: left;  }
+  #footer .footer-desktop .footer-item:nth-child(2){ text-align: center;}
+  #footer .footer-desktop .footer-item:nth-child(3){ text-align: right; }
+
+  /* logo size back up (and don’t let previous max-height rules cap it) */
+  #footer .logo-link img{
+    height: clamp(84px, 9vw, 120px);
+    width: auto;
+    max-height: none !important;
+    display: inline-block;
+  }
+
+  /* type sizing for better presence */
+  #footer .footer-item p{
+    margin: 6px 0 0 0;
+    font-size: clamp(0.95rem, 0.9vw + 0.35rem, 1.15rem);
+    line-height: 1.25;
+  }
+  #footer .copyright{
+    margin-top: 8px;
+    font-size: clamp(0.95rem, 0.8vw + 0.35rem, 1.1rem) !important;
+    text-align: center;
+  }
+
+  /* link legibility */
+  #footer a{
+    font-weight: 600;
+  }
+}
+
+/* Maintain the compact, good-looking mobile footer exactly as-is */
 @media (max-width: 1000px){
-    #header a:hover {
-        border-bottom: 2px solid #fff;
-    }
-    #header a.active {
-        border-bottom: 2px solid #251825;
-    }
-    #photos {
-    columns:1;
-    column-gap:0%;
-    }
-    #photos img {
-        margin:2% 0px;
-    }
-    #photos img:hover {
-        transform: scale(1);
-        cursor: pointer;
-    }
-    #rightImage {
-        display:none;
-    }
-    #top_part {
-        border:0px;
-    }
-    #top_part tr td{
-        width:100%;
-        text-align:center;
-    }
-    #about {
-        width:92% !important;
-        height:75vh;
-        padding-top:20vh !important;
-        text-align:center;
-        padding:0px 4%;
-    }
-    #about table {
-        width:100%;
-        margin-top:6vh;
-    }
-    #about table tr td {
-        text-align:center;
-    }
-    .btn_one {
-    padding:6px 30px;
-    width:60%;
-    margin:4vh auto;
-    box-shadow:0px 10px 20px rgba(37, 24, 37, 0.8);
-    background:rgb(49, 32, 49);
-    color:#fff;
-    display: flex;
-    justify-content: center;
+  #footer{
+    width: 100% !important;
+    padding: 14px 12px !important;
+  }
+}
+
+/* ===== Footer: full-bleed edge-to-edge on desktop ===== */
+@media (min-width: 1001px){
+  #footer{
+    /* break out of any narrow ancestor */
+    position: relative;
+    left: 50%;               /* center the 100vw box within the page */
+    right: 50%;
+    margin-left: -50vw;      /* pull outward to viewport edges */
+    margin-right: -50vw;
+    width: 100vw !important; /* true viewport width */
+    max-width: none !important;
+    box-sizing: border-box;
+
+    /* keep the same side gutters as header/sections */
+    padding-left: 4vw !important;
+    padding-right: 4vw !important;
+  }
+
+  /* make sure the inner row still stretches and aligns */
+  #footer .footer-desktop{
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
     align-items: center;
-    }
-    .btn_one:hover {
-        box-shadow:0px 10px 40px rgba(37, 24, 37, 0.8);
-        cursor:pointer;
-    }    
-    #contact table tr td {
-        width:100%;
-        display:block;
-    }
-    #inner_table tr td{
-        padding:10px 0px !important;
-    }
-    #contact form input {
-        width:90%;
-    }
-    #contact form textarea {
-        width:90%;
-    }
-    #work h1 {
-        width:19%;
-    }
-    #bio h1 {
-        width:25%;
-    }
-    #contact h1 {
-        width:33%;
-    }
-    header {
-        width:96vw;
-        background:#fff;
-        padding:4vh 2vw;
-        position:absolute;
-    }
-    #header table tr td {
-        width:100%;
-        display:block;
-        text-align:center;
-        padding:15px 0px;
-    }
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-        z-index: 1001;
-    }
-    .hamburger div {
-        width: 2rem;
-        height: 0.25rem;
-        background-color: #251825;
-        transition: all 0.3s linear;
-    }
-    #navigation {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-    #navigation.active {
-        transform: translateX(0);
-    }#navigation {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        }
-        #navigation.active {
-        transform: translateX(0);
-        }
-    }
-@media (max-width: 600px) {
-    #logo img {
-        height: 75px;
-    }
+    justify-content: space-between;
+    gap: 28px;
+    margin: 0;               /* don't re-center/narrow it */
+  }
+
+  /* stronger presence (keep these if you liked the last pass) */
+  #footer .logo-link img{
+    height: clamp(84px, 9vw, 120px);
+    width: auto;
+    max-height: none !important;
+  }
+  #footer .footer-item{ flex: 1 1 33.333%; min-width: 0; }
+  #footer .footer-item:nth-child(1){ text-align: left;  }
+  #footer .footer-item:nth-child(2){ text-align: center;}
+  #footer .footer-item:nth-child(3){ text-align: right; }
 }
 
-/* ——— Chips (match button border, fill on hover) ——— */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  margin-top: 8px;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 14px;
-  line-height: 1;
-  background: #fff;                      /* chips = white, like btn default */
-  color: #000;                           /* black text per your note */
-  border: 3px solid rgb(81, 1, 17);      /* same as .btn_one border */
-  transition: 0.25s ease-in-out;
-}
-.chip i { font-size: 14px; color: #000; }
-.chip:hover {
-  background: rgb(60, 1, 12);            /* same hover fill as .btn_one */
-  color: #fff;
-  box-shadow: 0 10px 30px rgba(37,24,37,0.8);
-}
-.chip:hover i { color: #fff; }
-
-/* ——— Emphasis words inside paragraphs ——— */
-.emph {
-  color: rgb(81, 1, 17);
-  font-weight: 600;
+/* ===== FULL-WIDTH SECTIONS (match Eros feel) ===== */
+#bio, #work, #contact{
+  width: 100% !important;              /* fill viewport */
+  padding: 6vh 4vw !important;         /* keep side gutters */
+  box-sizing: border-box !important;   /* padding stays inside 100% */
+  max-width: none !important;
 }
 
-/* Optional: make hero subtitle breathe a bit */
-.subtitle { margin-top: 8px; font-weight: 600; }
+/* ===== FOOTER: bulletproof full-bleed =====
+   1) Break out of any parent width/max-width.
+   2) Fill the viewport edge-to-edge with consistent gutters.
+   3) Keep your 3-column alignment on desktop. */
+body > #footer{
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 24px 4vw !important;
+  box-sizing: border-box !important;
 
-/* Buttons: ensure no underline anywhere */
-.btn_one,
-.btn_one:link,
-.btn_one:visited,
-.btn_one i { text-decoration: none !important; }
-
-/* Hero stack: center buttons, chips, socials */
-.hero-stack { text-align: center; }
-.hero-stack .cta-row { display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
-.hero-stack .social-row { display:flex; justify-content:center; gap:14px; margin-top:16px; font-size:1.4rem; }
-
-/* Chips — larger, concise, not interactive (no hover) */
-.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 16px;              /* larger text */
-  line-height: 1;
-  background: #fff;             /* black text on white */
-  color: #000;
-  border: 3px solid rgb(81, 1, 17);  /* match your button border color */
-  cursor: default;              /* not a button */
-}
-.chip i { font-size: 16px; color: #000; }
-/* Remove hover fill on chips so they don't behave like buttons */
-.chip:hover { background: #fff; color:#000; box-shadow:none; }
-.chip:hover i { color:#000; }
-
-/* Experience chips layout (centered like hero) */
-#bio .chips-about { justify-content:center; }
-
-/* Emphasis words inside paragraphs */
-.emph { color: rgb(81, 1, 17); font-weight: 600; }
-
-/* Section headings and intro copy alignment (keep your existing styles; this normalizes Connect) */
-#connect h1, #connect > p { text-align: center; }
-
-/* Connect: center socials under address; side-by-side CTAs on the right */
-.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
-#connect .cta-row-connect { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-#connect .cta-hint { text-align:center; margin-top:10px; opacity:.85; }
-
-/* Ensure hero buttons & connect buttons never get underlines from global link rules */
-#top_part a.btn_one,
-#connect a.btn_one { text-decoration:none !important; }
-
-/* Ensure .btn_one never shows underlines (including icons) */
-.btn_one,
-.btn_one:link,
-.btn_one:visited,
-.btn_one i { text-decoration: none !important; }
-
-/* HERO: center stack + bigger socials; split subtitle lines */
-.hero-stack { text-align: center; }
-.hero-stack .cta-row { display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
-.hero-stack .social-row { display:flex; justify-content:center; gap:16px; margin-top:16px; font-size:1.4rem; }
-.subtitle { margin-top:8px; font-weight:600; }
-
-/* CHIPS: larger, concise, not interactive */
-.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
-.chip {
-  display:inline-flex; align-items:center; gap:8px;
-  padding:8px 16px; border-radius:999px; font-size:16px; line-height:1;
-  background:#fff; color:#000; border:3px solid rgb(81, 1, 17);
-  cursor: default;
-}
-.chip i { font-size:16px; color:#000; }
-.chip:hover { background:#fff; color:#000; box-shadow:none; }
-.chip:hover i { color:#000; }
-
-/* Experience chips block (center) */
-#bio .chips-about { justify-content:center; }
-
-/* Emphasis word style */
-.emph { color: rgb(81, 1, 17); font-weight:600; }
-
-/* CONNECT: allow your global section heading/underline rules to apply */
-#connect h1, #connect > p { text-align: left; }      /* revert any accidental centering */
-.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
-
-/* Right-column CTAs: side-by-side and centered within the right box */
-#connect .cta-row-connect { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-#connect .cta-hint { text-align:center; margin-top:10px; opacity:.85; }
-
-/* Buttons: never underline */
-.btn_one,
-.btn_one:link,
-.btn_one:visited,
-.btn_one i { text-decoration: none !important; }
-
-/* HERO: center everything */
-.hero-stack { text-align: center; }
-.subtitle { margin-top: 8px; font-weight: 600; text-align: center; }
-.subtitle .subtitle-second-line { display: block; }
-
-/* HERO chips + socials */
-.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
-.chip {
-  display:inline-flex; align-items:center; gap:8px;
-  padding:8px 16px; border-radius:999px; font-size:16px; line-height:1;
-  background:#fff; color:#000; border:3px solid rgb(81, 1, 17);
-  cursor: default;
-}
-.chip i { font-size:16px; color:#000; }
-.chip:hover { background:#fff; color:#000; box-shadow:none; }
-.chip:hover i { color:#000; }
-
-/* subtle divider between chips and socials in hero */
-.hero-divider {
-  width: 180px; height: 1px; margin: 14px auto 12px;
-  background: rgba(81, 1, 17, 0.25);
+  /* in case any earlier CSS tried to center/narrow it */
+  display: block !important;
+  float: none !important;
+  clear: both !important;
 }
 
-/* HERO socials: larger and centered */
-.hero-socials { display:flex; justify-content:center; gap:16px; font-size:1.5rem; }
+@media (min-width:1001px){
+  body > #footer .footer-desktop{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
 
-/* EXPERIENCE spacing: add room under paragraph and chips */
-#bio p { margin-bottom: 14px; }
-#bio .chips-about { justify-content:center; margin-top: 14px; margin-bottom: 8px; }
+  body > #footer .footer-item{ flex: 1 1 0 !important; min-width: 0; }
+  body > #footer .footer-item:nth-child(1){ text-align: left  !important; }
+  body > #footer .footer-item:nth-child(2){ text-align: center!important; }
+  body > #footer .footer-item:nth-child(3){ text-align: right !important; }
 
-/* CONTACT right-side CTAs: spaced & centered within the right column */
-.cta-row-contact { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-#contact .cta-hint { text-align:center; margin-top:12px; opacity:.85; }
+  /* bring logo back to the size you liked */
+  #footer .logo-link img{
+    height: clamp(90px, 9vw, 120px) !important;
+    width: auto !important;
+    max-height: none !important;
+  }
 
-/* CONTACT socials sizing to match hero feel */
-.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
+  /* readable center copyright */
+  #footer .copyright{ font-size: .95rem !important; margin-top: 8px !important; }
+}
+
+/* ===== HERO + EXPERIENCE: unify divider style (same red, same spacing) ===== */
+.hero-divider,
+.ui-divider{
+  width: 180px !important;
+  height: 1px !important;
+  background: rgba(81, 1, 17, 0.25) !important; /* Nyx red, 25% */
+  border: 0 !important;
+  margin: 14px auto 12px !important;
+}
+
+/* ==== FULL-WIDTH CONTENT SECTIONS (unchanged) ==== */
+#bio, #work, #contact{
+  width: 100% !important;
+  padding: 6vh 4vw !important;
+  box-sizing: border-box !important;
+  max-width: none !important;
+}
+
+/* ==== FOOTER: full-bleed, no overflow ==== */
+#footer{
+  /* Use % instead of vw to avoid scrollbar overflow */
+  width: 100% !important;
+  max-width: 100% !important;
+
+  /* Edge-to-edge feel with safe gutters */
+  padding: 24px 4vw !important;
+
+  /* Neutralize any inherited constraints */
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+  float: none !important;
+  clear: both !important;
+}
+
+@media (min-width:1001px){
+  #footer .footer-desktop{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 28px !important;
+
+    /* make sure the inner flex row spans the footer */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #footer .footer-item{ flex: 1 1 0 !important; min-width: 0; }
+  #footer .footer-item:nth-child(1){ text-align: left  !important; }
+  #footer .footer-item:nth-child(2){ text-align: center!important; }
+  #footer .footer-item:nth-child(3){ text-align: right !important; }
+
+  /* bring the logo back up in size */
+  #footer .logo-link img{
+    height: clamp(90px, 9vw, 120px) !important;
+    width: auto !important;
+    max-height: none !important;
+  }
+
+  #footer .copyright{ font-size: .95rem !important; margin-top: 8px !important; }
+}
+
+/* Keep divider styling consistent (hero & experience) */
+.hero-divider, .ui-divider{
+  width: 180px !important;
+  height: 1px !important;
+  background: rgba(81, 1, 17, 0.25) !important;
+  border: 0 !important;
+  margin: 14px auto 12px !important;
+}
+
+/* Safety: no sideways scroll anywhere */
+html, body{ overflow-x: hidden !important; }
+
+/* ===== FOOTER: force true full-bleed even if nested in a narrow wrapper ===== */
+#footer{
+  display:block !important;
+  position:relative !important;
+
+  /* Escape any parent width (works even inside tables/divs) */
+  left:50% !important;
+  right:50% !important;
+  margin-left:calc(50% - 50vw) !important;
+  margin-right:calc(50% - 50vw) !important;
+  width:100vw !important;
+  max-width:100vw !important;
+
+  /* Look & spacing */
+  background:#fff !important;
+  padding:28px clamp(16px,4vw,64px) !important;
+  box-sizing:border-box !important;
+  clear:both !important;        /* in case something above floats */
+  overflow:hidden !important;   /* prevents stray overflow */
+}
+
+/* Desktop footer row layout */
+@media (min-width:1001px){
+  #footer .footer-desktop{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:28px !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+  }
+  #footer .footer-item{ flex:1 1 0 !important; min-width:0; }
+  #footer .footer-item:nth-child(1){ text-align:left  !important; }
+  #footer .footer-item:nth-child(2){ text-align:center!important; }
+  #footer .footer-item:nth-child(3){ text-align:right !important; }
+
+  /* Bring logo back up (adjust the clamp if you want bigger/smaller) */
+  #footer .logo-link img{
+    height:clamp(90px, 9vw, 120px) !important;
+    width:auto !important;
+  }
+
+  .copyright{ font-size:.95rem !important; margin-top:8px !important; }
+}
+
+/* Safety: never allow sideways scroll because of the footer */
+html, body{ overflow-x:hidden !important; }
+
+/* Keep the hero/experience divider style consistent everywhere */
+.hero-divider, .ui-divider{
+  width:180px !important;
+  height:1px !important;
+  background:rgba(81,1,17,.25) !important;
+  border:0 !important;
+  margin:14px auto 12px !important;
+}
+
+/* ===== Footer: full-bleed background + centered inner row ===== */
+#site-footer{
+  /* full-bleed no matter what wraps above */
+  width:100%;
+  background:#fff;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.06);
+  padding: 28px 0;                /* vertical rhythm */
+  position: relative;
+  z-index: 1;
+}
+
+/* desktop row: centered content with your usual gutters */
+#site-footer .footer-inner{
+  width: min(1200px, 92vw);       /* capped like Eros; 4vw gutters each side */
+  margin: 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 28px;
+}
+
+#site-footer .footer-item{ flex:1 1 0; min-width:0; }
+#site-footer .footer-item:nth-child(1){ text-align:left;  }
+#site-footer .footer-item:nth-child(2){ text-align:center;}
+#site-footer .footer-item:nth-child(3){ text-align:right; }
+
+#site-footer .logo-link img{
+  height: clamp(90px, 9vw, 120px);
+  width:auto;
+}
+#site-footer .copyright{ margin-top:8px; font-size:.95rem; }
+
+#site-footer a{ color:#251825; text-decoration:none; }
+#site-footer a:hover{ color:rgb(81,1,17); font-weight:700; }
+
+/* mobile stack mirrors your existing look */
+#site-footer .footer-inner-mobile{
+  width: min(600px, 94vw);
+  margin: 0 auto;
+  text-align:center;
+}
+
+/* keep helpers in case cache had old rules */
+.desktop-only{ display:block; }
+.mobile-only { display:none; }
+@media (max-width:1000px){
+  .desktop-only{ display:none; }
+  .mobile-only { display:block; }
+}
+
+/* safety: avoid horizontal scroll from any 100vw element */
+html, body{ overflow-x:hidden; }
+
+/* === Footer: full-width, aligned to site gutters, clean height === */
+#footer{
+  width:100vw;                 /* span the full viewport width */
+  background:#fff;             /* ensure not transparent */
+  border:0; box-shadow:none;   /* kill any edge/border look */
+  padding:24px 4vw;            /* match site’s 4vw side gutters */
+}
+
+.footer-desktop{
+  display:flex !important;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  width:100%;
+}
+
+#footer .footer-item{ flex:1 1 0; }
+#footer .footer-item:nth-child(1){ text-align:left;  }   /* “Powered by…” */
+#footer .footer-item:nth-child(2){ text-align:center; }  /* logo + copyright */
+#footer .footer-item:nth-child(3){ text-align:right; }   /* “A creative endeavor…” */
+
+/* Tighter vertical rhythm so the footer isn’t overly tall */
+#footer .footer-item p{ margin:0; line-height:1.35; }
+#footer .copyright{ margin-top:8px; font-size:.95rem; }
+
+/* Desktop logo size */
+#footer .logo-link img{ max-height:84px; width:auto; display:inline-block; }
+
+/* Mobile stays as-is; just mirror gutters for consistency */
+@media (max-width:1000px){
+  #footer{ padding:16px 4vw; }
+}
