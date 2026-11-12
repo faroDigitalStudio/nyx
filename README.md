@@ -1,86 +1,42 @@
-# nyxWebsite
-## Website for Nyx Boudoir Photography, a Metalumina endeavor
-## Hosted @ [nyxpics.com](https://nyxpics.com/), from github page @ [nyxPhotography.github.io](https://nyxPhotography.github.io)
+# Nyx Photography
 
-**Version: 0.0.1**
+Model, boudoir, and editorial portrait sessions with an emphasis on confidence, creative direction, and personal expression. Part of the [MetaLumina](https://metalumina.studio/) spectrum.
 
-### Table of Contents
-* [Structure of the Site](#structure-of-the-site)
-    * [Layout](#layout)
-    * [Features](#features)
-* [Planning](#planning)
-* [Updates](#updates)
+**Website:** [nyxpics.com](https://nyxpics.com/)
 
+## About the site
 
-### Structure of the Site
-The Nyx Photography website is designed to promote the services of Nyx, a specialized boudoir and portrait photography service. The site aims to provide an immersive, captivating user experience, showcasing the unique value proposition of Nyx: bringing the studio to the client, anywhere across the country.
+A mobile-friendly, inquiry-first website based on the **Strada** BootstrapMade template. The single-page experience includes:
 
-The site's structure prominently features an introduction of the Nyx experience, a portfolio of past work, and ways to connect with the Nyx team. Social media links are integrated to allow visitors to engage with Nyx across various platforms.
+- **Hero:** Editorial imagery and one clear inquiry CTA
+- **Our Approach:** Comfortable sessions, creative direction, and expressive photography
+- **Sessions:** Model photography, boudoir, and editorial portraits
+- **What to Expect:** How planning, the shoot, and image delivery work
+- **Inquire:** Email-first form with flexible timing, camera experience, and an optional checkbox for separate modeling opportunities
 
-By focusing on a sleek, modern design, engaging visuals, and clear, concise information, the Nyx Photography website is a powerful tool in attracting potential clients and nurturing existing customer relationships.
+## Technology
 
-#### Layout
-* The Experience
-  * Overview of services
-  * Introduction to the Nyx philosophy
-* Portfolio
-  * Curated selection of past work
-* Connect
-  * Contact form
-  * Social links
+- HTML5, CSS3, Bootstrap 5, and vanilla JavaScript
+- BootstrapMade **Strada** template (commercial license)
+- Static hosting on **GitHub Pages**, with the `nyxpics.com` custom domain
+- **Formspark:** `https://submit-form.com/ZRr2nRjG8`
+- **Google Analytics 4:** `G-DT9BGRNDVZ`
+- Canonical URL, Open Graph/Twitter metadata, and `ProfessionalService` structured data
 
-#### Features
-* Detailed introduction to the Nyx experience
-* High-quality portfolio of past work
-* Contact form for inquiries
-* Social media links
-* The Nyx Photography color palette, used throughout site:
-	- ![#52000F](https://placehold.it/15/52000F/000000?text=+) `#52000F`
-	- ![#3D000B](https://placehold.it/15/3D000B/000000?text=+) `#3D000B`
-	- ![#251825](https://placehold.it/15/251825/000000?text=+) `#251825`
-  - ![#312031](https://placehold.it/15/312031/000000?text=+) `#312031`
+## Key files
 
-### Planning
-- [x] set up repo
-- [x] create organization
-- [x] set up github page
-- [x] acquire nyxpics.com domain
-- [x] configure DNS
-- [x] SSL certificate
-- [x] bootstrap with template
-- [x] make more responsive to dynamic window sizing
-- [x] adjust heading styling
-- [x] "The Experience" section
-- [x] "Portfolio" section
-- [x] "Connect" section
-- [x] footer 
-- [x] social links
-- [x] contact form
-- [ ] set up google recaptcha
-- [x] create GA property
-- [x] link analytics
+```text
+index.html              Page content, metadata, and intake form
+assets/css/main.css     Nyx styling, imagery, and responsive layouts
+assets/js/main.js       Navigation and Formspark submission handling
+assets/img/             Brand marks and editorial imagery
+assets/vendor/          Bootstrap template dependencies
+```
 
-### Updates
-#### V1.0
-* formatted "The Experience" section
-* formatted "Portfolio" section
-* formatted "Connect" section
-* set up contact form
-* integrated reCAPTCHA
-* updated images
-* adjusted highlight color for social links
-* adjusted footer
-* linked sections to navbar
-* set up analytics
-* **MILESTONE: *Initial Release***
-#### V0.2
-* established layout
-* updated palette
-* trimmed fat
-* made display more responsive to window size
-* adjusted "The Experience" width
-#### v0.1
-* bootstraped
-* configured CNAME
-* create Google Analytics property
-* **MILESTONE: *Initial Commit***
+The inquiry form uses Formspark's honeypot field, inline success/error messages, and duplicate-submission prevention. Successful inquiries are tracked as GA4 `generate_lead` events without sending visitor details to analytics. Direct email: **book@nyxpics.com**. Calls are arranged privately when needed, not through a public calendar.
+
+**Images:** `hero.png`, `approach.png`, `experience.png`, `inquiry.png`, `background.jpg`, `logo.png`, and `favIcon.png`. Keep these exact filenames in `assets/img/`. `background.jpg` is used by CSS in the What to Expect section.
+
+## Maintenance
+
+Edit page copy and form fields in `index.html`, styling and image positioning in `assets/css/main.css`, and form/navigation behavior in `assets/js/main.js`. Retain `assets/vendor/`. After deployment, send a real test inquiry and verify delivery in Formspark and the notification inbox.
